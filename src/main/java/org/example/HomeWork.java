@@ -28,7 +28,14 @@ public class HomeWork {
      */
     public <T> int partitionBy(Node<T> list, Predicate<T> pred) {
         //TODO реализовать метод
-        return 0;
+        int res = 0;
+        while (list != null) {
+            if (pred.test(list.getValue())) {
+                res++;
+            }
+            list = list.getNext();
+        }
+        return res;
     }
 
     /**
@@ -41,6 +48,18 @@ public class HomeWork {
      * @return сам элемент
      */
     public <T> T findNthElement(Node<T> list, int n) {
-        return null;
+        if (list == null) {
+            return null;
+        }
+        int index = 0;
+        while (list.getNext() != null && index < n) {
+            index++;
+            list = list.getNext();
+        }
+        if (index == n) {
+            return list.getValue();
+        } else {
+            return null;
+        }
     }
 }
