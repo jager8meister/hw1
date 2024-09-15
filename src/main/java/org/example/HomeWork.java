@@ -29,6 +29,9 @@ public class HomeWork {
     public <T> int partitionBy(Node<T> list, Predicate<T> pred) {
         //TODO реализовать метод
         int res = 0;
+        if (pred == null) {
+            return res;
+        }
         while (list != null) {
             if (pred.test(list.getValue())) {
                 res++;

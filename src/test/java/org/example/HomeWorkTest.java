@@ -39,6 +39,8 @@ class HomeWorkTest {
         };
         assertEquals(4, homeWork.partitionBy(head, pred));
         assertEquals(1, homeWork.partitionBy(head, predZero));
+        assertEquals(0, homeWork.partitionBy(head, null));
+        assertEquals(0, homeWork.partitionBy(null, predZero));
     }
 
     @Test
